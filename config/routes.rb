@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
   get 'pin/index'
-
   get 'board/index'
-
   devise_for :users
   root to: "boards#index"
   resources :boards do
-    resources :pins
+    resources :pins do
+      resources :tags
+    end
   end
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

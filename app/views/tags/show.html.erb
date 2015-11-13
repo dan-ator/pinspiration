@@ -1,0 +1,14 @@
+<h2>Posts by Tag: <%= @category.category %></h2>
+
+<% @pins.each do |pin| %>
+ <article>
+   <h2><%= link_to pin.title, board_path(@board) %></h2>
+   <time>Updated <%= pin.updated_at %></time>
+   <% if pin.tags.length > 0 %>
+     <!-- <h3>Tags</h3>
+     <% pin.tags.each do |tag| %>
+       <%= link_to tag.category.category, category_path(tag.category) %>
+     <% end %> -->
+   <% end %>
+ </article>
+<% end %>

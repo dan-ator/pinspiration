@@ -1,0 +1,4 @@
+<%= form_for [@board, @pin, @tag] do |f| %>
+<%= text_field_tag :category %>
+<%= f.submit "Create Tag" %>
+<% end %>

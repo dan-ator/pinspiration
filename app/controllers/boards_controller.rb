@@ -17,6 +17,8 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
 
   def show
     @board = Board.find(params[:id])
+    @pins = @board.pins
+    @tag = Tag.new
   end
 
   def edit
