@@ -1,0 +1,16 @@
+<h1><%= @board.title %></h1>
+<%= link_to "Change Board Name", edit_board_path(@board) %>
+<br>
+<%= link_to "New Pin", new_board_pin_path(@board) %>
+<br>
+<table>
+  <% @board.pins.each do |pin| %>
+  <tr>
+  <td><%= "#{pin.title}" %></td>
+  <td><%= image_tag pin.image_url %></td>
+  <td><%= link_to "Unpin this", board_pin_path(@board, pin), method: :delete, data: {confirm: "Are you sure you want to unpin this?"} %></td>
+</tr>
+  <% end %>
+</table>
+<br>
+<%= link_to "Blow up this board", @board, method: :delete, data: {confirm: "Are you sure?"} %>

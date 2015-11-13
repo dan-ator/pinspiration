@@ -1,0 +1,13 @@
+<h1>New Board</h1>
+
+<div class="form">
+  <%= form_for @board do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.hidden_field :author, value: current_user.email %>
+
+  <%= f.submit "Create Board!" %>
+  <% end %>
+</div>

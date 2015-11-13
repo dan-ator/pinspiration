@@ -1,0 +1,7 @@
+<h1>Boards</h1>
+
+<h2><%= link_to "Create New Board", new_board_path %></h2>
+<h2><% @boards.each do |board| %>
+  <%= link_to "#{board.title}", board %>
+  <% end %>
+</h2>
